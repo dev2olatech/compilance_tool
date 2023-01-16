@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Inputs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="row m-2">
+        <div>
+            <h4>
+                Add Inputs For Complience Certificate
+            </h4>
+        </div>
+        <form action="{% url 'pdf_view' %}" method="GET">
+            {% csrf_token %}
+
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th style="width: 20%;">First Name</th>
+                        <td>
+                            <input class="form-control w-25" type="text" name="first_name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">Last Name</th>
+                        <td>
+                            <input class="form-control w-25" type="text" name="last_name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">Designation</th>
+                        <td>
+                            <input class="form-control w-25" type="text" name="designation" value="Compliance Officer">
+                        </td>
+                    </tr>
+                    <tr  style="display: none;">
+                        <th style="width: 20%;">Organization Name</th>
+                        <td>
+                            <input class="form-control w-25" type="text" name="organization_name" value="Olatech Solutions Limited">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">Number of Event Required to be Capture</th>
+                        <td>
+                            <input class="form-control w-25" type="number" name="number_of_event">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">Date</th>
+                        <td>
+                            <input class="form-control w-25" type="date" name="date_of_certification">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">Place</th>
+                        <td>
+                            <input class="form-control w-25" type="text" name="place">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <input class="btn btn-primary" type="submit" value="submit">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
