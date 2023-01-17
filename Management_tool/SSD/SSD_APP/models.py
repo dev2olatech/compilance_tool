@@ -55,17 +55,17 @@ class DISCLOSURE(models.Model):
     Information
     """
     Id = models.AutoField(primary_key=True)
-    shared_by = models.CharField(max_length=254)
-    Nature_of_UPSI = models.CharField(max_length=254)
-    Purpose_of_sharing = models.CharField(max_length=254)
-    Remark = models.CharField(max_length=254)
+    shared_by = models.CharField(max_length=254, null=True, blank= True)
+    Nature_of_UPSI = models.CharField(max_length=254,null=True, blank= True)
+    Purpose_of_sharing = models.CharField(max_length=254,null=True, blank= True)
+    Remark = models.CharField(max_length=254,null=True, blank= True)
     shared_on = models.DateField()
     disc_Attachment = models.FileField(upload_to="")
-    Recipients_name = models.CharField(max_length=100)
-    Recipients_email = models.EmailField(max_length=100)
-    Recipients_mobile_number = models.CharField(max_length=18)
-    Recipients_Id_Type = models.CharField(max_length=100)
-    Recipients_Id_Number = models.CharField(max_length=100)
+    Recipients_name = models.CharField(max_length=100,null=True, blank= True)
+    Recipients_email = models.EmailField(max_length=100,null=True, blank= True)
+    Recipients_mobile_number = models.CharField(max_length=18,null=True, blank= True)
+    Recipients_Id_Type = models.CharField(max_length=100,null=True, blank= True)
+    Recipients_Id_Number = models.CharField(max_length=100,null=True, blank= True)
 
     def delete(self, filename, *args, **kwargs):
         os.remove(os.path.join(settings.MEDIA_ROOT, self.qr_code.name))
